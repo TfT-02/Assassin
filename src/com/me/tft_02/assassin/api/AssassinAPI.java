@@ -10,10 +10,9 @@ public final class AssassinAPI {
     private Assassin plugin;
     
     /**
-     * Let's get rid of the constructor and replace it with a method
-     * Must use this method in base class to work
+     * Sets the plugin's instance to that of the method's constructor
      * <p>
-     * More api-like
+     * Must be used for the plugin to not through a NPE
      * 
      * @param instance The plugin to be used in the api
      */ 
