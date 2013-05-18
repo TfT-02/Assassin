@@ -28,6 +28,7 @@ import com.me.tft_02.assassin.util.UpdateChecker;
 public class Assassin extends JavaPlugin {
     public static Assassin instance;
 
+    private AssassinAPI api = new AssassinAPI();
     private TagListener tagListener = new TagListener(this);
     private EntityListener entityListener = new EntityListener(this);
     private PlayerListener playerListener = new PlayerListener(this);
@@ -46,12 +47,17 @@ public class Assassin extends JavaPlugin {
     public static Assassin getInstance() {
         return instance;
     }
+    
+    public getAssassinAPI(){
+        return api;
+    }
 
     /**
      * Run things on enable.
      */
     @Override
     public void onEnable() {
+        api.setPlugin(this);
         instance = this;
         PluginManager pm = getServer().getPluginManager();
         if (pm.getPlugin("TagAPI") == null) {

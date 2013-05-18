@@ -7,10 +7,17 @@ import com.me.tft_02.assassin.util.PlayerData;
 
 public final class AssassinAPI {
 
-    Assassin plugin;
-
-    private AssassinAPI(Assassin instance) {
-        plugin = instance;
+    private Assassin plugin;
+    
+    /**
+     * Sets the plugin's instance to that of the method's constructor
+     * <p>
+     * Must be used for the plugin to not through a NPE
+     * 
+     * @param instance The plugin to be used in the api
+     */ 
+    public void setPlugin(Assassin instance){
+        this.plugin = instance;
     }
 
     private PlayerData data = new PlayerData(plugin);
